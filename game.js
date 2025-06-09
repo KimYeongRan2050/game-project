@@ -5,7 +5,7 @@ const scoreEl = document.getElementById('score');
 
 const COLS = 10;
 const ROWS = 20;
-const BLOCK = 20;
+const BLOCK = 32;
 
 let board, current, interval, score = 0;
 
