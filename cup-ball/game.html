@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>컵 속의 공 찾기 게임</title>
+  <link rel="stylesheet" href="./css/game.css">
+</head>
+
+<body onload="startGame()">
+  <h1>컵안에 공 찾기 게임!!</h1>
+  <div class="game">
+    <div class="cupbox" onclick="cupSelection(0)">
+      <div class="ball" id="ball0"></div>
+      <div class="cup" id="cup0"></div>
+    </div>
+    <div class="cupbox" onclick="cupSelection(1)">
+      <div class="ball" id="ball1"></div>
+      <div class="cup" id="cup1"></div>
+    </div>
+    <div class="cupbox" onclick="cupSelection(2)">
+      <div class="ball" id="ball2"></div>
+      <div class="cup" id="cup2"></div>
+    </div>
+  </div>
+  <div class="btn">
+    <button onclick="startGame()">게임시작하기</button>
+  </div>
+  
+  <script src="./js/game.js"></script>
+</body>
+</html>
