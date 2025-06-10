@@ -7,12 +7,12 @@ const PADDING = 10;
 const CARD_SIZE = Math.floor((canvas.width - PADDING * (COLS + 1)) / COLS);
 const START = PADDING;
 
-const cardBackSrc = 'SJHimg/check.png';
+const cardBackSrc = '/shinjh/img/check.png';
 
 
 function getCardFaceImage(cardNumber) {
     const img = new Image();
-    img.src = `SJHimg/${cardNumber}.png`;
+    img.src = `shinjh/img/${cardNumber}.png`;
     return img;
 }
 
@@ -119,7 +119,7 @@ canvas.addEventListener('click', function(e) {
                     if (cards.every(c => !c.close)) {
                         setTimeout(() => {
                             // alert('게임 클리어!');
-                            window.location.href = 'clear.html';
+                            window.location.href = 'CardGameClear.html';
                         }, 2000);
                     }
                 }, 800);
