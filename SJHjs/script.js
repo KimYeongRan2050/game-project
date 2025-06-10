@@ -1,18 +1,18 @@
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-// 카드와 캔버스 레이아웃
+// 카드와 캔버스 레이아웃 관련 상수
 const ROWS = 4, COLS = 4;
 const PADDING = 10;
 const CARD_SIZE = Math.floor((canvas.width - PADDING * (COLS + 1)) / COLS);
 const START = PADDING;
 
-const cardBackSrc = 'img/check.png';
+const cardBackSrc = 'SJHimg/check.png';
 
 
 function getCardFaceImage(cardNumber) {
     const img = new Image();
-    img.src = `img/${cardNumber}.png`;
+    img.src = `SJHimg/${cardNumber}.png`;
     return img;
 }
 
@@ -23,7 +23,7 @@ for (let i = 1; i <= 8; i++) {
     cardNumbers.push(i, i);
 }
 
-// 카드 배열을 랜덤하게 섞기
+// 카드 배열을 랜덤하게 섞기 (Fisher-Yates shuffle)
 for (let i = cardNumbers.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [cardNumbers[i], cardNumbers[j]] = [cardNumbers[j], cardNumbers[i]];
@@ -69,9 +69,12 @@ function drawCards() {
     });
 }
 
+// 카드 배열 생성 후, 시작 시 모든 카드가 닫혀있는 상태로 보이도록 그림
+drawCards();
+
 let firstCard = null;
 let secondCard = null;
-let lock = false; // 카드 열리거나 뒤집히는 중 클릭 방지
+let lock = false; // 애니메이션 중 클릭 방지
 
 canvas.addEventListener('click', function(e) {
     if (lock) return;
