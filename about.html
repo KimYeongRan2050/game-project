@@ -2,73 +2,9 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>캔디팡팡 - 게임 구조 설명</title>
+    <title>캔디팡팡 - 게임 소개 및 구조</title>
     <link rel="stylesheet" href="candy.css">
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: #fffbe7;
-            font-family: 'Jua', 'Noto Sans KR', sans-serif;
-        }
-        .about-container {
-            max-width: 1200px;
-            margin: 40px auto 0 auto;
-            background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 4px 18px rgba(0,0,0,0.09);
-            padding: 36px 32px 28px 32px;
-        }
-        .about-container h1 {
-            text-align: center;
-            color: #ff7eb9;
-            margin-bottom: 28px;
-            font-size: 2.2em;
-        }
-        .about-flex {
-            display: flex;
-            gap: 48px;
-            align-items: flex-start;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .about-img {
-            flex: 1 1 700px;
-            min-width: 400px;
-            max-width: 800px;
-        }
-        .about-img img {
-            width: 100%;
-            max-width: 800px;
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-            display: block;
-            margin: 0 auto;
-        }
-        .about-desc {
-            flex: 2 1 340px;
-            min-width: 260px;
-            max-width: 480px;
-        }
-        .about-desc ul {
-            font-size: 1.13em;
-            color: #444;
-            margin-bottom: 18px;
-            padding-left: 18px;
-        }
-        .about-desc li {
-            margin-bottom: 10px;
-        }
-        .about-desc p {
-            font-size:1.08em;
-            color:#666;
-            margin-bottom:18px;
-        }
-        @media (max-width: 1200px) {
-            .about-flex { flex-direction: column; gap: 18px; }
-            .about-img, .about-desc { max-width: 100%; }
-            .about-img { min-width: 0; }
-        }
-    </style>
 </head>
 <body>
     <div class="about-container">
@@ -97,6 +33,18 @@
                     <b>main.js</b>가 중심이 되어 각 기능별 모듈을 불러와 게임을 구성하며, <b>index.html</b>과 <b>howto.html</b>은 <b>candy.css</b>로 스타일을 공유합니다.
                 </p>
             </div>
+        </div>
+        <hr style="margin:40px 0 30px 0; border:0; border-top:2px dashed #ffb347;">
+        <div class="howto-container" style="box-shadow:none; background:transparent; max-width:700px; margin:0 auto;">
+            <h1 style="font-size:2em; color:#ffb347;">게임 방법 🍬</h1>
+            <ol>
+                <li><b>게임 시작</b> 버튼을 누르면 8x8 보드에 다양한 색의 캔디와 장애물(🗿)이 배치됩니다.</li>
+                <li>인접한 두 캔디를 클릭해 자리를 바꿀 수 있습니다.<br>(장애물은 움직일 수 없습니다.)</li>
+                <li>같은 색 캔디 3개 이상이 가로 또는 세로로 연속되면 캔디가 터집니다.</li>
+                <li>한 번에 4개 이상을 맞추면 특수 블록이 생성됩니다.</li>
+                <li>연속 매치가 발생하면 콤보로 더 많은 점수를 얻을 수 있습니다.</li>
+                <li>제한 시간(60초) 내에 최대한 많은 점수를 획득하세요!</li>
+            </ol>
         </div>
     </div>
 </body>

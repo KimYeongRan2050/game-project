@@ -271,3 +271,63 @@ body {
     background: #ffb347;
     color: #fff;
 }
+
+/* about.html 전용 스타일 */
+.about-container {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+    padding: 36px 32px 28px 32px;
+}
+.about-container h1 {
+    text-align: center;
+    color: #ff7eb9;
+    margin-bottom: 28px;
+    font-size: 2.2em;
+}
+.about-flex {
+    display: flex;
+    gap: 48px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.about-img {
+    flex: 1 1 700px;
+    min-width: 400px;
+    max-width: 800px;
+}
+.about-img img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    display: block;
+    margin: 0 auto;
+}
+.about-desc {
+    flex: 2 1 340px;
+    min-width: 260px;
+    max-width: 480px;
+}
+.about-desc ul {
+    font-size: 1.13em;
+    color: #444;
+    margin-bottom: 18px;
+    padding-left: 18px;
+}
+.about-desc li {
+    margin-bottom: 10px;
+}
+.about-desc p {
+    font-size:1.08em;
+    color:#666;
+    margin-bottom:18px;
+}
+@media (max-width: 1200px) {
+    .about-flex { flex-direction: column; gap: 18px; }
+    .about-img, .about-desc { max-width: 100%; }
+    .about-img { min-width: 0; }
+}
