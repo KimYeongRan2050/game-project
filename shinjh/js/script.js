@@ -10,7 +10,7 @@ const PADDING = 10;
 const CARD_SIZE = Math.floor((canvas.width - PADDING * (COLS + 1)) / COLS);
 const START = PADDING;
 
-const cardBackSrc = '/shinjh/img/check.png';
+const cardBackSrc = './img/check.png';
 
 // 1~8까지의 카드 번호를 두 번씩 배열에 추가 (총 16장)
 let cardNumbers = [];
