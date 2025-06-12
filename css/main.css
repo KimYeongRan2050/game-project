@@ -58,7 +58,10 @@ p.title {
 }
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 500px) {
+  .container{
+    width: 470px;
+  }
   .list {
     width: 100%;
   }
