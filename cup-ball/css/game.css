@@ -1,4 +1,3 @@
-
 .game {
   display: flex;
   justify-content: center;
@@ -9,7 +8,7 @@
 
 .cupbox {
   position: relative;
-  width: 170px;
+  width: 200px;
   height: 200px;
   transition: all 0.8s ease-in-out;
   cursor: pointer;
@@ -60,4 +59,15 @@ button:hover {
   cursor: pointer;
 }
 
+/*diagram*/
+.diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.diagram::after {
+  content: '';
+  clear: both;
+  display: block;
+}
