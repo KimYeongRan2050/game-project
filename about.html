@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>캔디팡팡 - 게임 구조 설명</title>
+    <link rel="stylesheet" href="candy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: #fffbe7;
+            font-family: 'Jua', 'Noto Sans KR', sans-serif;
+        }
+        .about-container {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+            padding: 36px 32px 28px 32px;
+        }
+        .about-container h1 {
+            text-align: center;
+            color: #ff7eb9;
+            margin-bottom: 28px;
+            font-size: 2.2em;
+        }
+        .about-flex {
+            display: flex;
+            gap: 48px;
+            align-items: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .about-img {
+            flex: 1 1 700px;
+            min-width: 400px;
+            max-width: 800px;
+        }
+        .about-img img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            display: block;
+            margin: 0 auto;
+        }
+        .about-desc {
+            flex: 2 1 340px;
+            min-width: 260px;
+            max-width: 480px;
+        }
+        .about-desc ul {
+            font-size: 1.13em;
+            color: #444;
+            margin-bottom: 18px;
+            padding-left: 18px;
+        }
+        .about-desc li {
+            margin-bottom: 10px;
+        }
+        .about-desc p {
+            font-size:1.08em;
+            color:#666;
+            margin-bottom:18px;
+        }
+        @media (max-width: 1200px) {
+            .about-flex { flex-direction: column; gap: 18px; }
+            .about-img, .about-desc { max-width: 100%; }
+            .about-img { min-width: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <h1>캔디팡팡 게임 구조 안내</h1>
+        <div class="about-flex">
+            <div class="about-img">
+                <img src="mermaid.jpg" alt="게임 구조 다이어그램">
+            </div>
+            <div class="about-desc">
+                <ul>
+                    <li><b>index.html</b> : 게임의 메인 페이지입니다. 게임판, 점수, 타이머, 시작 버튼 등이 있습니다.</li>
+                    <li><b>howto.html</b> : 게임 방법을 안내하는 별도의 페이지입니다.</li>
+                    <li><b>candy.css</b> : 전체 스타일(CSS) 파일로, 게임판, 캔디, 버튼, 안내 페이지 등 모든 디자인을 담당합니다.</li>
+                    <li><b>js/</b> 폴더 : 게임의 모든 동작을 담당하는 자바스크립트 모듈들이 들어 있습니다.
+                        <ul>
+                            <li><b>main.js</b> : 게임 초기화, 이벤트 처리, 각 모듈 연결</li>
+                            <li><b>board.js</b> : 게임판과 캔디의 생성, 이동, 매치 등 보드 관련 로직</li>
+                            <li><b>candy.js</b> : 개별 캔디의 속성(색, 타입 등)을 관리하는 클래스</li>
+                            <li><b>ui.js</b> : 점수판, 메시지 등 UI 갱신</li>
+                            <li><b>timer.js</b> : 타이머 관리</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    위 구조도는 각 파일과 모듈이 어떻게 연결되어 있는지 한눈에 보여줍니다.<br>
+                    <b>main.js</b>가 중심이 되어 각 기능별 모듈을 불러와 게임을 구성하며, <b>index.html</b>과 <b>howto.html</b>은 <b>candy.css</b>로 스타일을 공유합니다.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
