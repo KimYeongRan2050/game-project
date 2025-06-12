@@ -1,58 +1,63 @@
-  .game {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin-top: 100px;
-  }
 
-  .cupbox {
-    width: 200px;
-    height: 200px;
-    position: relative;
-    cursor: pointer;
-  }
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 100px;
+}
 
-  .cup {
-    width: 200px;
-    height: 200px;
-    background: url(../images/cup-small.png) 0 0 no-repeat;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: transform 0.5s;
-  }
+.cupbox {
+  position: relative;
+  width: 170px;
+  height: 200px;
+  transition: all 0.8s ease-in-out;
+  cursor: pointer;
+}
 
-  .ball {
-    width: 50px;
-    height: 50px;
-    background: url(../images/dice.png) 0 0 no-repeat;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    display: none;
-    /* 처음엔 보이지 않음 */
-  }
+.cup {
+  width: 200px;
+  height: 200px;
+  background: url(../images/cup-small.png) 0 0 no-repeat;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: transform 0.5s;
+}
 
-  .btn {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-  }
+.ball {
+  width: 50px;
+  height: 50px;
+  background: url(../images/dice.png) 0 0 no-repeat;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  /* 처음엔 보이지 않음  */
+}
 
-  button {
-    padding: 10px 20px;
-    background: #2980B9;
-    border: 1px solid #175e8d;
-    color: #fff;
-    cursor: pointer;
-  }
 
-  button:hover {
-    padding: 10px 20px;
-    background: #29b92f;
-    border: 1px solid #338d17;
-    color: #fff;
-    cursor: pointer;
-  }
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+button {
+  padding: 10px 20px;
+  background: #2980B9;
+  border: 1px solid #175e8d;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  padding: 10px 20px;
+  background: #29b92f;
+  border: 1px solid #338d17;
+  color: #fff;
+  cursor: pointer;
+}
+
+
