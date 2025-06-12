@@ -14,7 +14,7 @@ function getCardFaceImage(cardNumber) {
     // 새로운 이미지 객체를 생성
     const img = new Image();
     // 카드 번호에 해당하는 앞면 이미지 파일 경로를 설정
-    img.src = `shinjh/img/${cardNumber}.png`;
+    img.src = `/shinjh/img/${cardNumber}.png`;
     // 이미지 객체를 반환 (이 이미지는 drawCards에서 사용됨)
     return img;
 }
