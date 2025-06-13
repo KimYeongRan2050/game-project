@@ -1,96 +1,53 @@
-/* 반응형 웹페이지(크기에 따라 맞춤정렬) */
+/* backgroundCanvas: 배경
+objectCanvas: 플레이어, 총알, 적  */
 
-/* --- 공통 스타일 --- */
 body {
-    margin: 0;
-    font-family: sans-serif;
-    background-color: #f7f7f7;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-/* --- 기본 (모바일) 스타일 --- */
-/* 화면이 좁을 때는 기본적으로 모든 요소가 세로로 쌓입니다. */
+canvas {
+  position: absolute;
+  /* flexble 하게 만든거라 캔버스에서 디스플레이 블록이 필요한지는 잘 모르겠음 */
+  display: block;
+  background-color: transparent;
 
-.main-container {
-    display: flex;
-    flex-direction: column; /* ★ 모바일에서는 세로(column)로 쌓기 */
-    align-items: center; /* 자식 요소들을 가로축 중앙에 정렬 */
-    width: 100%;
+  /* 캔버스 자체의 높이를 정확히 중앙에 배치(%를 사용하면 웹페이지의 크기에 상관없이 항상 같은 중앙에 위치 할 수 있다) */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+/* 왜 세로로 안되는거징.. -> css에서 비율 설정 하면 된다고 했는데 아녔음 기존 html에서 크기설정하는 방법이 맞음 ㅎ*/
+  aspect-ratio: 9 / 16;
 
-    
-}
-.game-section {
-    width: 90%; /* 화면 너비의 90%를 차지 */
-    height: 60vh; /* 화면 높이의 60% 정도를 차지 */
-    max-width: 400px; /* 최대 너비는 400px로 제한 */
-    background-color: black;
-    margin-bottom: 40px; /* 아래쪽에 여백 추가 */
-}
-
-.info-section {
-    /* 모바일에서는 텍스트와 게임 화면이 위아래로 나뉘므로 flex:1 불필요 */
-    padding: 40px 60px; /* 위아래로 넉넉한 여백 주기 */
-    text-align: center; /* 텍스트 중앙 정렬 */
-  
+  /* max-width: 100vw;
+  max-height: 100hw; */
+  /* width: 200px;
+  height: 400px; */
 }
 
-.info-section p {
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-    color: #333;
+#myCanvas {
+  z-index: 0;
 }
 
-.info-section a {
-    display: flex; /* 링크를 한 줄씩 차지하게 만듦 */ 
-    /* -> 내가 원했던건 한 줄 씩 세로정렬, display에 block을 사용했으나 가로로 정렬이 되어 flex로 변경 */
-    align-items: center;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: 
-    #007bff;
-    text-decoration: none;
-}
-
-.info-section a img {
-    max-height: 1.2em; /* 최대 높이를 텍스트 크기의 1.2배로 제한 */
-    vertical-align: middle;
-    margin-right: 5px;
-}
-
-.info-section a:hover {
-    text-decoration: underline;
+#playObject {
+  z-index: 1;
 }
 
 
-/* --- 웹 (데스크탑) 스타일 --- */
-/* ★★★ 화면 너비가 768px 이상일 때 아래 스타일을 덮어씁니다 ★★★ */
-@media (min-width: 768px) {
-
-    .main-container {
-        flex-direction: row; /* ★ 웹에서는 가로(row)로 배열 */
-        height: 100vh; /* 웹에서는 화면 높이를 꽉 채움 */
-    }
-
-    .info-section {
-        flex: 1; /* 왼쪽 정보 섹션이 공간의 절반을 차지 */
-        text-align: left; /* 텍스트 왼쪽 정렬 */
-        padding-left: 10%; /* 왼쪽 여백 추가 */
-    }
-
-    .game-section {
-        flex: 1; /* 오른쪽 게임 섹션이 공간의 나머지 절반을 차지 */
-        height: 80vh; /* 게임 화면 높이를 더 키움 */
-        margin-right: 8%; /* 오른쪽 여백 추가 */
-        margin-bottom: 0; /* 불필요한 아래쪽 여백 제거 */
-    }
-
-    /* .info-section a {
-        display: inline-block; /* 링크가 한 줄에 같이 나올 수 있게 변경 */
-        /* margin-right: 20px; 링크 사이에 오른쪽 여백 추가 */
-    /* } */
+/* 게임오버시 restart 버튼
+-> 조건: 끝이 둥근 하얀색의 반투명한 버튼 */
+#restartBtn {
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
-.game-section {
-  position: relative;
-  width: 400px;
-  height: 700px;
+#restartBtn:hover {
+  background-color: #666;
 }
