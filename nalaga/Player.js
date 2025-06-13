@@ -99,14 +99,31 @@ function updateGameArea() {
   drawLives();
 }
 
+// 로고 관련 변수
+const logoImage = new Image();
+logoImage.src = "img/Nalaga_logo.png";
+let logoY = -100;             // 로고 시작 위치 (화면 위쪽 밖)
+const targetLogoY = 150;      // 로고가 멈출 위치
+const logoSpeed = 1.2;        // 내려오는 속도
+
 function showStartText() {
   const ctx = myGameArea.context;
-  ctx.font = "15px Arial";
-  ctx.fillStyle = "white";
-  if (Math.floor(Date.now() / 500) % 2 === 0) {
-    // 글자 위에 게임이름 이미지도 넣고 싶음
-    // 만들어야함
-    ctx.fillText("Push Enter to Start", 140, 550);
+
+  // 로고 내려오기
+  if (logoY < targetLogoY) {
+    logoY += logoSpeed;
+  }
+
+  // 로고 그리기
+  ctx.drawImage(logoImage, 90, logoY, 220, 220); // (x, y, width, height)
+
+  // 로고가 적절한 위치에 도달하면 텍스트 표시
+  if (logoY >= targetLogoY - 1) {
+    ctx.font = "15px Arial";
+    ctx.fillStyle = "white";
+    if (Math.floor(Date.now() / 500) % 2 === 0) {
+      ctx.fillText("Push Enter to Start", 140, logoY + 300); // 로고 아래 위치
+    }
   }
 }
 
