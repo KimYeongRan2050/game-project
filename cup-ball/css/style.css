@@ -46,7 +46,7 @@ ul{
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1.5px 4px rgba(0, 0, 0, 0.04);
   padding: 2em;
   min-width: 370px;
-  max-width: 480px;
+  max-width: 600px;
   display: flex;
   margin-bottom: 1em;
   transition: box-shadow 0.2s;
