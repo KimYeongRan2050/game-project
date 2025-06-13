@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>캔디팡팡 - 게임 소개 및 구조</title>
+    <link rel="stylesheet" href="css/candy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="about-container">
+        <h1>캔디팡팡 게임 구조 안내</h1>
+        <div class="about-flex">
+            <div class="about-img">
+                <img src="img/mermaid.JPG" alt="게임 구조 다이어그램">
+            </div>
+            <div class="about-desc">
+                <ul>
+                    <li><b>index.html</b> : 게임의 메인 페이지입니다. 게임판, 점수, 타이머, 시작 버튼 등이 있습니다.</li>
+                    <li><b>howto.html</b> : 게임 방법을 안내하는 별도의 페이지입니다.</li>
+                    <li><b>candy.css</b> : 전체 스타일(CSS) 파일로, 게임판, 캔디, 버튼, 안내 페이지 등 모든 디자인을 담당합니다.</li>
+                    <li><b>js/</b> 폴더 : 게임의 모든 동작을 담당하는 자바스크립트 모듈들이 들어 있습니다.
+                        <ul>
+                            <li><b>main.js</b> : 게임 초기화, 이벤트 처리, 각 모듈 연결</li>
+                            <li><b>board.js</b> : 게임판과 캔디의 생성, 이동, 매치 등 보드 관련 로직</li>
+                            <li><b>candy.js</b> : 개별 캔디의 속성(색, 타입 등)을 관리하는 클래스</li>
+                            <li><b>ui.js</b> : 점수판, 메시지 등 UI 갱신</li>
+                            <li><b>timer.js</b> : 타이머 관리</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    위 구조도는 각 파일과 모듈이 어떻게 연결되어 있는지 한눈에 보여줍니다.<br>
+                    <b>main.js</b>가 중심이 되어 각 기능별 모듈을 불러와 게임을 구성하며, <b>index.html</b>과 <b>howto.html</b>은 <b>candy.css</b>로 스타일을 공유합니다.
+                </p>
+            </div>
+        </div>
+        <hr style="margin:40px 0 30px 0; border:0; border-top:2px dashed #ffb347;">
+        <div class="howto-container" style="box-shadow:none; background:transparent; max-width:700px; margin:0 auto;">
+            <h1 style="font-size:2em; color:#ffb347;">게임 방법 🍬</h1>
+            <ol>
+                <li><b>게임 시작</b> 버튼을 누르면 8x8 보드에 다양한 색의 캔디와 장애물(🗿)이 배치됩니다.</li>
+                <li>인접한 두 캔디를 클릭해 자리를 바꿀 수 있습니다.<br>(장애물은 움직일 수 없습니다.)</li>
+                <li>같은 색 캔디 3개 이상이 가로 또는 세로로 연속되면 캔디가 터집니다.</li>
+                <li>한 번에 4개 이상을 맞추면 특수 블록이 생성됩니다.</li>
+                <li>연속 매치가 발생하면 콤보로 더 많은 점수를 얻을 수 있습니다.</li>
+                <li>제한 시간(60초) 내에 최대한 많은 점수를 획득하세요!</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
