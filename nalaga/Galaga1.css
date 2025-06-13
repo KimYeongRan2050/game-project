@@ -1,0 +1,53 @@
+/* backgroundCanvas: 배경
+objectCanvas: 플레이어, 총알, 적  */
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+canvas {
+  position: absolute;
+  /* flexble 하게 만든거라 캔버스에서 디스플레이 블록이 필요한지는 잘 모르겠음 */
+  display: block;
+  background-color: transparent;
+
+  /* 캔버스 자체의 높이를 정확히 중앙에 배치(%를 사용하면 웹페이지의 크기에 상관없이 항상 같은 중앙에 위치 할 수 있다) */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+/* 왜 세로로 안되는거징.. -> css에서 비율 설정 하면 된다고 했는데 아녔음 기존 html에서 크기설정하는 방법이 맞음 ㅎ*/
+  aspect-ratio: 9 / 16;
+
+  /* max-width: 100vw;
+  max-height: 100hw; */
+  /* width: 200px;
+  height: 400px; */
+}
+
+#myCanvas {
+  z-index: 0;
+}
+
+#playObject {
+  z-index: 1;
+}
+
+
+/* 게임오버시 restart 버튼
+-> 조건: 끝이 둥근 하얀색의 반투명한 버튼 */
+#restartBtn {
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  background-color: #444;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#restartBtn:hover {
+  background-color: #666;
+}

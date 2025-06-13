@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Let's play Nalaga!</title>
+
+  <link rel="stylesheet" href="Galaga1.css">
+  
+
+
+</head>
+
+<body onload="startGame()">
+
+  
+  <button id="restartBtn" onclick="restartGame()" style="display:none;">Restart</button>
+  <!-- 배경 캔버스 -->
+  <canvas id="myCanvas" width="400" height="700"></canvas>
+  <canvas id="playObject" width="400" height="700"></canvas>
+  <!-- 오브젝트(플레이어, 적 등) 캔버스 -->
+  <!-- <canvas id="plaYer"></canvas> -->
+
+  <!-- * 색코드 / 형광핑크: #f52e7f 형광연두:33ff33 형광노랑: d0ee17 -->
+
+  <!-- <script src="Player.js"></script> -->
+  <script src="Player.js"></script>
+  <script src="Gbackground.js"></script>
+ 
+
+
+</body>
+
+</html>
