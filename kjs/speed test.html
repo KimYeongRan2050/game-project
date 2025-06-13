@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>반응속도 테스트</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      background-color: #f0f0f0;
+    }
+    #box {
+      width: 300px;
+      height: 200px;
+      background-color: gray;
+      margin: 0 auto;
+      line-height: 200px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      user-select: none;
+      border-radius: 10px;
+    }
+    #result, #average, #history {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+    #resetBtn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #resetBtn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>반응속도 테스트</h1>
+  <div id="box">클릭해서 시작</div>
+  <div id="result"></div>
+  <div id="average"></div>
+  <div id="history"></div>
+  <button id="resetBtn">기록 초기화</button>
+
+  <script>
+    const box = document.getElementById("box");
+    const result = document.getElementById("result");
+    const averageDisplay = document.getElementById("average");
+    const historyDisplay = document.getElementById("history");
+    const resetBtn = document.getElementById("resetBtn");
+
+    let startTime;
+    let timeoutID;
+    let gameStarted = false;
+    let canClick = false;
+
+    let reactionTimes = [];
+
+    box.addEventListener("click", () => {
+      if (!gameStarted) {
+        box.textContent = "기다리세요...";
+        box.style.backgroundColor = "red";
+        result.textContent = "";
+        gameStarted = true;
+
+        const delay = Math.random() * 2000 + 1000; 
+
+        timeoutID = setTimeout(() => {
+          box.style.backgroundColor = "green";
+          box.textContent = "클릭!";
+          startTime = Date.now();
+          canClick = true;
+        }, delay);
+      } else if (canClick) {
+        const reactionTime = Date.now() - startTime;
+        result.textContent = `반응 속도: ${reactionTime}ms`;
+
+        reactionTimes.push(reactionTime);
+        showAverage();
+        showHistory();
+
+        resetGame();
+      } else {
+        clearTimeout(timeoutID);
+        box.textContent = "너무 빨랐어요!";
+        box.style.backgroundColor = "gray";
+        resetGame();
+      }
+    });
+
+    function resetGame() {
+      gameStarted = false;
+      canClick = false;
+    }
+
+    function showAverage() {
+      const sum = reactionTimes.reduce((a, b) => a + b, 0);
+      const avg = Math.round(sum / reactionTimes.length);
+      averageDisplay.textContent = `평균 반응속도: ${avg}ms`;
+    }
+
+    function showHistory() {
+      const lastFive = reactionTimes.slice(-5);
+      historyDisplay.innerHTML = "최근 기록: " + lastFive.join(", ") + " (ms)";
+    }
+
+    
+    resetBtn.addEventListener("click", () => {
+      reactionTimes = [];
+      averageDisplay.textContent = "";
+      historyDisplay.textContent = "";
+      result.textContent = "기록이 초기화되었습니다.";
+    });
+  </script>
+
+</body>
+</html>
