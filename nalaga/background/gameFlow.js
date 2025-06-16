@@ -1,6 +1,6 @@
 //gameFlow.js
-import { setStartTime, setGameState, score, setElapsedTime, setScore, setLives } from "./gameState.js";
-import { audioFiles } from "./audioManager.js";
+import { setStartTime, setGameState, score, setElapsedTime, setScore, setLives } from "../js/gameState.js";
+import { audioFiles } from "./js/audioManager.js";
 
 export function startPlaying() {
   setStartTime(Date.now());
