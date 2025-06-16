@@ -127,13 +127,16 @@ function showStartText() {
   }
 }
 
-function showGameOver() {
+function showGameOver() {  
   const ctx = myGameArea.context;
   ctx.font = "30px Arial";
   ctx.fillStyle = "white";
-  ctx.fillText("Game Over", 120, 300);
+  ctx.fillText("Game Over", 120, 300); 
+  
   const button = document.getElementById("restartBtn");
-  if (button) button.style.display = "block";
+  if (button) {
+    button.style.display = "block";  
+  }
 }
 
 function drawScore() {
@@ -313,7 +316,19 @@ function detectEnemyBulletHit() {
   }
 }
 
-
+// restart -> 전부 초기화 하기
+function restartGame() {  
+  gameState = "waiting";  // 게임 상태를 "waiting"으로 초기화
+  score = 0;              // 점수 초기화
+  lives = 3;              // 라이프 초기화
+  nextWaveTime = 16;      // 웨이브 타이머 초기화
+  player = new component(64, 64, "img/player.png", 170, 616, "image");  // 플레이어 초기화
+  createEnemies(3, 7);    // 적 생성
+  myGameArea.start();     // 게임 시작
+  document.getElementById("restartBtn").style.display = "none";  
+  audioFiles.gameOver.pause();  
+  audioFiles.gameBGM.play();   
+}
 // 문제점: 게임 시작시 enter(game start)를 누르기 전에도 bgm이 나오게 했는데 음악 재생이 안됨
 // -> 다른 audio는 작동이 된는데 왜 이거만 안되는지 모르겠음
 // 디버깅: play() failed because the user didn't interact with the document first.
