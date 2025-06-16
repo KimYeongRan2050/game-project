@@ -29,6 +29,7 @@ function updateStars() {
 
 function setCanvasSize() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   bgCanvas.width = window.innerWidth; 
   bgCanvas.height = document.documentElement.scrollHeight; // 스크롤 가능한 전체 페이지 높이로 설정
 
@@ -39,6 +40,12 @@ function setCanvasSize() {
 
   updateStars(); // 별의 위치 갱신
 >>>>>>> 66fedce (설명페이지 재등록)
+=======
+  bgCanvas.width = window.innerWidth; 
+  bgCanvas.height = document.documentElement.scrollHeight; // 스크롤 가능한 전체 페이지 높이로 설정
+
+  updateStars(); // 별의위치
+>>>>>>> 318a455 (설명페이지 오류부분 수정)
 }
 
 function animateBackground() {
@@ -74,6 +81,7 @@ animateBackground();
 
 window.addEventListener("resize", setCanvasSize); 
 window.addEventListener("scroll", setCanvasSize); 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 
@@ -153,3 +161,5 @@ window.addEventListener("scroll", setCanvasSize);
 
 
 >>>>>>> 66fedce (설명페이지 재등록)
+=======
+>>>>>>> 318a455 (설명페이지 오류부분 수정)
