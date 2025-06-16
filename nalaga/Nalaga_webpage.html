@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<!-- 홈페이지 -->
+    <!-- 홈페이지 -->
     <div class="main-container">
         <!-- 텍스트 요소 -->
         <div class="info-section">
@@ -35,22 +35,23 @@
 
         <!-- 낼러거 게임요소 -->
         <div class="game-section">
-      <!--캔버스에 width/height 속성 추가 -->
-      <canvas id="myCanvas" width="400" height="700" style="position: absolute; z-index: 0;"></canvas>
-      <canvas id="playObject" width="400" height="700" style="position: absolute; z-index: 1;"></canvas>
-      <button id="restartBtn" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">Restart</button>
-    </div>
-  </div>
-
-  <div>
-  <script src="Player.js"></script>
-  <script src="Gbackground.js"></script>
-  <script>
-    window.onload = () => {
-      startGame(); // Galaga.js 내부의 함수 실행
-    };
-    </script>
+            <!--캔버스에 width/height 속성 추가 -->
+            <canvas id="myCanvas" width="400" height="700" style="position: absolute; z-index: 0;"></canvas>
+            <canvas id="playObject" width="400" height="700" style="position: absolute; z-index: 1;"></canvas>
+            <button id="restartBtn"
+                style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">Restart</button>
         </div>
+    </div>
+
+    <div>
+        <script type="module" src="js/main.js"></script>
+        <script src="background/Nalaga_background.js"></script>
+        <script>
+            window.onload = () => {
+                startGame(); // Galaga.js 내부의 함수 실행
+            };
+        </script>
+    </div>
 
 </body>
 
