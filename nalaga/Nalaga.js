@@ -220,7 +220,7 @@ function createEnemies(rows, cols) {
 function fireBullet() {
   audioFiles.shoot.currentTime = 0;
   audioFiles.shoot.play();
-  const bullet = new component(20, 15, "img/bullet.png", player.x + player.width / 2 - 10, player.y, "image");
+  const bullet = new component(20, 15, "img/Bullet.png", player.x + player.width / 2 - 10, player.y, "image");
   bullet.speedY = -5;
   bullets.push(bullet);
 }
