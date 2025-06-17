@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Let's play Nalaga!</title>
+  <link rel="stylesheet" href="Nalaga_2.css">
+</head>
+
+  <!-- <body onload="startGame()"> -->
+
+<body onload="startGame()">
+
+  
+
+  <body>
+  <canvas id="myCanvas" width="400" height="700" style="position: absolute; z-index: 0;"></canvas>
+  <canvas id="playObject" width="400" height="700" style="position: absolute; z-index: 1;"></canvas>
+  <button id="restartBtn" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2;">Restart</button>
+
+  <!-- script 순서 중요 -->
+  <script src="Nalaga_2.js"></script>
+  <script src="background/Nalaga_background.js"></script>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    startGame();  // 로고 애니메이션 실행
+    audioFiles.beforeStart.play().catch(err => {
+      console.log("🔇 자동 재생 차단됨:", err);
+    });
+  });
+</script>
+</body>
+
+
+</body>
+
+</html>
