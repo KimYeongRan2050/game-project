@@ -43,15 +43,7 @@ canvas {
   font-size: 16px;
   padding: 8px 16px;
   border: none;
-<<<<<<< HEAD
-  background-color: #444;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-#restartBtn:hover {
-  background-color: #666;
-=======
+
   background-color: rgba(255, 255, 255, 0.6); /* 불투명한 흰색 */
   color: #444;
   border-radius: 12px; /* 둥근 버튼 */
@@ -65,5 +57,4 @@ canvas {
 
 #restartBtn:hover {
   background-color: rgba(255, 255, 255, 0.8); /* hover 시 투명도 증가 */
->>>>>>> nalall
 }
