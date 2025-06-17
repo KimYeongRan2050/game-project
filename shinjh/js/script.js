@@ -143,7 +143,7 @@ class CardGame {
                         if (this.cards.every(c => !c.close)) {
                             setTimeout(() => {
                                 window.location.href = 'CardGameClear.html';
-                            }, 2000);
+                            }, 1000);
                         }
                     }, 800);
                 }
