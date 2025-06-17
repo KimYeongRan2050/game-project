@@ -1,6 +1,7 @@
 // main.js 
 // Nalaga.html 의 body에 있던 onload 요소를 빼서 main.js에 게임이 실행 될 수 있도록 추가
 
+<<<<<<< HEAD
 import { gameState, score, startTime, elapsedTime, lives, nextWaveTime } from './gameState.js';
 import { player, updatePlayer } from './player.js';
 import { createEnemies, updateEnemies } from './enemy.js';
@@ -40,3 +41,8 @@ window.addEventListener('keydown', function(e) {
 });
 
 setInterval(updateGame, 20);
+=======
+window.onload = () => {
+  startGame();
+};
+>>>>>>> nalall

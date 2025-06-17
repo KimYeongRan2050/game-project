@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reaction Speed Game</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1>게임 설명</h1>
+  <div class="cards">
+    <div id="reactionGame">
+      <dl>
+        <dt>
+          <button class="start-button"
+            onclick="window.open('speed test.html', 'popup', 'width=650,height=520,top=200,left=200'); return false;">
+            게임시작
+          </button>
+        </dt>
+        <dd>
+          <h2>
+            <a href="speed test.html" class="link"
+              onclick="window.open(this.href, 'popup', 'width=650,height=520,top=200,left=200'); return false;">
+              Reaction Speed Test Game
+            </a>
+          </h2>
+          <p>
+            초록색이 되었을 때 얼마나 빨리 클릭하는지를 측정하는 반응속도 테스트 게임
+          </p>
+          <p><strong>게임 방법</strong></p>
+          <ul>
+            <li>회색 박스를 클릭하면 게임이 시작</li>
+            <li>잠시 후 박스가 초록색으로 바뀌면 클릭</li>
+            <li>빨리 누르면 실패</li>
+          </ul>
+          <p><strong>특징</strong></p>
+          <ul>
+            <li>간단한 조작으로 누구나 쉽게 플레이 가능</li>
+            <li>클릭 반응속도를 측정하여 초 단위로 결과 표시</li>
+            <li>최근 기록과 평균 반응속도를 자동으로 저장 및 표시</li>
+            <li>기록 초기화 버튼으로 언제든지 기록 리셋 가능</li>
+          </ul>
+          <p><strong>개선 방안</strong></p>
+          <ul>
+            <li>순위 기능 추가</li>
+            <li>색상, 반응 조건을 커스터마이징할 수 있는 기능</li>
+          </ul>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</body>
+</html>

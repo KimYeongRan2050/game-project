@@ -52,8 +52,6 @@ function shuffleCups() {
   console.log("컵을 섞었습니다."); // 디버깅용 로그
 }
 
-
-
 function cupSelection(index) {
   if (gameOver) return;
 
@@ -64,7 +62,7 @@ function cupSelection(index) {
 
   if (index === ballPosition) {
     document.getElementById(`ball${index}`).style.display = "block";
-    alert("공을 찾았습니다. 축하합니다.");
+    alert("주사위를 찾았습니다. 축하합니다.");
 
     setTimeout(() => {
       // 모든 컵 클릭 방지

@@ -71,3 +71,11 @@ button:hover {
   clear: both;
   display: block;
 }
+
+p::before{
+  content: '★';
+  clear: both;
+  display: inline-block;
+  padding-right: 5px;
+  color : red
+}
